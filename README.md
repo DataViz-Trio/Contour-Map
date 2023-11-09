@@ -21,13 +21,13 @@
 - We split the line at all the spaces. If the last element of the line contains ** line too long **, we pop the last element out of the list. We then convert all strings (the surface rain rates) to their float values. 
 - Due to the limitation of Text files, not all rows contain 1440 values. Hence, we keep adding the BAD VALUE to the list until the length of the list is 1440. 
 - All these lists (rows) are added to another list to generate a 2D list.
-- The line of code *data_i = ma.masked_where(data_i == BAD_VALUE, data_i)* performs data masking, where BAD_VALUE is masked or excluded from the dataset before it is used for plotting. This ensures that any occurrence of BAD_VALUE in the dataset will not be considered in the plot, preventing inaccurate or misleading visualizations due to erroneous or missing data points.
+- The line of code `data_i = ma.masked_where(data_i == BAD_VALUE, data_i)` performs data masking, where BAD_VALUE is masked or excluded from the dataset before it is used for plotting. This ensures that any occurrence of BAD_VALUE in the dataset will not be considered in the plot, preventing inaccurate or misleading visualizations due to erroneous or missing data points.
 
 ## Contour Mapping Implementation
 
-- The *generate_dataset(name)* is a function that takes in a name of the text file (dataset), processes it and returns a 2D List, as described in the Data Processing section.
+- The `generate_dataset(name)` is a function that takes in a name of the text file (dataset), processes it and returns a 2D List, as described in the Data Processing section.
 
-- The *plot_contour(data,title,contour_levels,contour_colors)* generates a contour plot using the Matplotlib and Cartopy libraries. The implementation of the method is as follows:
+- The `plot_contour(data,title,contour_levels,contour_colors)` generates a contour plot using the Matplotlib and Cartopy libraries. The implementation of the method is as follows:
 
     - Input Parameters:
         - data: A 2D array-like data representing values for the contour plot.
@@ -39,11 +39,11 @@
         - Initializes a contour plot using Matplotlib and Cartopy with Plate Carrée projection centered at longitude 180.
         - Applies a dark background style to enhance visualization.
 
-    - Plot Data: The data is plotted on the map using the *contour* function which takes the data parameter to extract values for contour lines. Additionally, it uses contour_levels to determine where to draw the lines and contour_colors to assign colors to the lines.
+    - Plot Data: The data is plotted on the map using the `contour` function which takes the data parameter to extract values for contour lines. Additionally, it uses contour_levels to determine where to draw the lines and contour_colors to assign colors to the lines.
 
-    - Map Features: The function adds coastlines to the map using *add_feature()* to provide geographic context.
+    - Map Features: The function adds coastlines to the map using `add_feature()` to provide geographic context.
 
-    - Colorbar: The *fig.colorbar()* function takes contour_plot (the contour lines) as input, ticks specifies the values at which tick marks will be placed on the color bar, orientation determines the direction of the color bar ('vertical' in this case), label provides a label for the color bar.
+    - Colorbar: The `fig.colorbar()` function takes contour_plot (the contour lines) as input, ticks specifies the values at which tick marks will be placed on the color bar, orientation determines the direction of the color bar ('vertical' in this case), label provides a label for the color bar.
 
     - Display the Plot: The function displays the plot using plt.show().
 
