@@ -83,7 +83,7 @@ This Python code generates an animated contour plot using Matplotlib and Cartopy
 ### 1. Clone the Repository:
 
 ```bash
-git clone [https://github.com/DataViz-Trio/Contour-Map.git]
+git clone https://github.com/DataViz-Trio/Contour-Map.git
 ```
 
 ### 2. Navigate to the Repository:
