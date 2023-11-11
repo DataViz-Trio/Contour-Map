@@ -78,3 +78,33 @@ This Python code generates an animated contour plot using Matplotlib and Cartopy
 ### 6. Final Output:
 - Upon execution, the code generates an animated contour plot showcasing the variation of rain data over different frames. The animation is saved as 'contour_map_animation.mp4'.
 
+## How to Run the IPython Notebook:
+
+### 1. Clone the Repository:
+
+```bash
+git clone [https://github.com/DataViz-Trio/Contour-Map.git]
+```
+
+### 2. Navigate to the Repository:
+```bash
+cd Contour-Map
+```
+
+### 3. Install Required Libraries:
+```bash
+pip install matplotlib numpy scikit-image cartopy
+```
+
+### 4. Install Jupyter(if not installed):
+```bash
+pip install jupyter
+```
+
+### 4. Launch Jupyter Notebook:
+```bash
+jupyter notebook 'Contour Mapping.ipynb'
+```
+### 5. Run "Contour Mapping.ipynb":
+- Open the notebook.
+- Run each cell sequentially.
