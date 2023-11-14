@@ -13,7 +13,7 @@
     - 10, 20, 30 April 2016
     - 10, 20, 30 June 2016 
 
-## Contour Mapping Data Processing: 
+## Data Processing: 
 
 - We ignore the first 7 lines and start reading the text file from the 8th line. We ignore the 7th line as well since the longitudes in the dataset are in the same order that the library expects. Hence, we do not need to explicitly store the longitudes to perform any sort of data processing later on.
 - We store each line in a list. We drop the first element of each list, which corresponds to the latitude for that line. The reason for dropping the latitude is the same as the reason for dropping the longitudes. 
@@ -22,6 +22,15 @@
 - Due to the limitation of Text files, not all rows contain 1440 values. Hence, we keep adding the BAD VALUE to the list until the length of the list is 1440. 
 - All these lists (rows) are added to another list to generate a 2D list.
 - The line of code `data_i = ma.masked_where(data_i == BAD_VALUE, data_i)` performs data masking, where BAD_VALUE is masked or excluded from the dataset before it is used for plotting. This ensures that any occurrence of BAD_VALUE in the dataset will not be considered in the plot, preventing inaccurate or misleading visualizations due to erroneous or missing data points.
+
+## Data Analysis
+
+- We analyse the data in Data Analysis section of "Contout Mapping.ipynb" notebook.
+- We first check the maximum value for all the different dates. We notice that it is 25 for 9 out of the 10 dates and 16.78 for only one date.
+- Hence, we decide to keep the maximum value in the contour levels as 25.
+- We next analyse the values for the contour levels array.
+- We check the percentage of values which are greater than 0.5 for each dataset and notice that only around 3% of values in each dataset are greater than 0.5.
+
 
 ## Contour Mapping Implementation
 
